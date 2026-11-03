@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f4ef">
+    <meta name="description" content="A calm, thoughtful place to play Sudoku.">
+    <title>Sudoku — a little space to think</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="wordmark" href="./" aria-label="Sudoku home">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span>sudoku<span class="wordmark-period">.</span></span>
+        </a>
+        <span class="top-note"><span class="status-dot"></span> A little space to think</span>
+      </header>
+
+      <section class="game-layout" aria-labelledby="page-title">
+        <div class="game-intro">
+          <p class="eyebrow">YOUR DAILY PAUSE</p>
+          <h1 id="page-title">Find your<br><span>flow state.</span></h1>
+          <p class="intro-copy">A quiet moment, one square at a time.<br>Take a breath and enjoy the puzzle.</p>
+          <div class="game-details">
+            <div class="detail-block">
+              <span class="detail-label">DIFFICULTY</span>
+              <label class="sr-only" for="difficulty">Choose difficulty</label>
+              <select id="difficulty" class="difficulty-select">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+            </div>
+            <div class="detail-divider"></div>
+            <div class="detail-block timer-block">
+              <span class="detail-label">TIME</span>
+              <span id="timer" class="timer" aria-label="Elapsed time">00:00</span>
+            </div>
+          </div>
+        </div>
+
+        <section class="game-card" aria-label="Sudoku game">
+          <div class="board-heading">
+            <div>
+              <p class="eyebrow">PUZZLE <span id="puzzle-number">01</span></p>
+              <h2>Make it make sense.</h2>
+            </div>
+            <button id="new-game" class="new-game-button" type="button">
+              <span aria-hidden="true">↻</span> New game
+            </button>
+          </div>
+
+          <div id="board" class="sudoku-board" role="grid" aria-label="Sudoku puzzle"></div>
+
+          <div class="number-pad" role="group" aria-label="Enter a number">
+            <button type="button" class="number-button" data-number="1" aria-label="Enter 1">1</button>
+            <button type="button" class="number-button" data-number="2" aria-label="Enter 2">2</button>
+            <button type="button" class="number-button" data-number="3" aria-label="Enter 3">3</button>
+            <button type="button" class="number-button" data-number="4" aria-label="Enter 4">4</button>
+            <button type="button" class="number-button" data-number="5" aria-label="Enter 5">5</button>
+            <button type="button" class="number-button" data-number="6" aria-label="Enter 6">6</button>
+            <button type="button" class="number-button" data-number="7" aria-label="Enter 7">7</button>
+            <button type="button" class="number-button" data-number="8" aria-label="Enter 8">8</button>
+            <button type="button" class="number-button" data-number="9" aria-label="Enter 9">9</button>
+            <button id="erase" class="erase-button" type="button" aria-label="Erase selected cell">⌫</button>
+          </div>
+
+          <div class="board-footer">
+            <div class="footer-tools">
+              <button id="notes" class="notes-button" type="button" aria-pressed="false">✎ Notes</button>
+              <p id="message" class="game-message" aria-live="polite">Choose a square to begin.</p>
+            </div>
+            <button id="check-board" class="check-button" type="button">Check puzzle <span aria-hidden="true">→</span></button>
+          </div>
+        </section>
+      </section>
+
+      <footer class="page-footer">
+        <span>Made for the joy of figuring it out.</span>
+        <span class="keyboard-hint">TIP: USE YOUR KEYBOARD TO PLAY</span>
+      </footer>
+    </main>
+  </body>
+</html>
